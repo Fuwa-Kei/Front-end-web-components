@@ -50,6 +50,7 @@ app.get("/", function(req, res) {
     // } else {
     //     day = "sunday";
     // }
+    
         // set marker to replace in ejs file
         res.render("list", {kindOfDay: day});
 });
