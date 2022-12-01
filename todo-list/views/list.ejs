@@ -4,16 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>To-do List</title>
 </head>
 <body>
 
-    <% if (kindOfDay === "Saturday" || kindOfDay === "Sunday") { %>
-        <h1 style="Color: rgba(255, 0, 0, 0.485)"><%= kindOFDay %> ToDo List</h1>
-    <% } else { %>
-        <h1 style="color: rgb(0, 140, 255)"><%= kindOfDay %> Todo</h1>
-    <% } %>
+    <div class="box" id="heading"><h1><%= kindOfDay %></h1></div>
+
+        <!-- can put in js file array directly -->
+        <!-- <li>Buy food</li>
+        <li>Cook food</li>
+        <li>eat food</li> -->
+        <!-- <li><%= newListItems %></li> -->
+    <div class="box">
+        <% for (var i = 0; i < newListItems.length; i++) { %>
+           <div class="item">
+            <input type="checkbox">
+            <p><%= newListItems[i] %></p>
+        </div>
+        <% } %> 
+        
+        <form class="item" action="/" method="post">
+        <input type="text" name="newItem" placeholder="New Item" autocomplete="off">
+        <button type="submit" name="button">+</button>
+    </form>
+    </div>
+    
+
+   
 
 </body>
 </html>
