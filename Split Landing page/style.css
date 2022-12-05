@@ -1,0 +1,133 @@
+:root {
+    --left-bg: rgba(0, 36, 142, 0.7);
+    --right-bg: rgba(44, 52, 44, 0.7);
+    --left-btn-hover: rgba(0, 36, 142, 1);
+    --right-btn-hover: rgb(0, 104, 22, 1);
+    --hover-width: 75%;
+    --non-hover-width: 25%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+}
+
+h1 {
+    font-size: 4rem;
+    color: white;
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.btn {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+    color: white;
+    border: white solid 0.2rem;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    width: 15rem;
+    padding: 1.5rem;
+}
+
+.container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background-color: #333;
+}
+
+.split {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.split.left {
+    left: 0;
+    background: url('images/ps5.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.left::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--left-bg);
+}
+
+.split.left .btn:hover {
+    background-color: var(--left-btn-hover);
+    border-color: var(--left-btn-hover);
+}
+
+.split.right {
+    right: 0;
+    background: url('images/xbox.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.split.right::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--right-bg);
+}
+
+.split.right .btn:hover {
+    background-color: var(--right-btn-hover);
+    border-color: var(--right-btn-hover);
+}
+
+.split.right, .split.left, .split.left::before, .split.right::before {
+    transition: width 800ms ease-in-out;
+}
+
+.hover-left .left {
+    width: var(--hover-width);
+}
+
+.hover-left .right {
+    width: var(--non-hover-width);
+}
+
+.hover-right .right {
+    width: var(--hover-width);
+}
+
+.hover-right .left {
+    width: var(--non-hover-width);
+}
+
+@media (max-width: 800px) {
+    h1 {
+        font-size: 2rem;
+        top: 30%;
+    }
+
+    .btn {
+        padding: 1.2rem;
+        width: 12rem;
+    }
+}

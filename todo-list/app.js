@@ -13,8 +13,9 @@ let items = [];
 let workItems = [];
 
 app.get("/", function(req, res) {
+
 // date is in date module (date.js)
-    let day = date.getDay();
+    let day = date.getDate();
         // set marker to replace in ejs file
         res.render("list", {listTitle: day, newListItems: items});
 });

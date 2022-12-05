@@ -1,6 +1,4 @@
-module.exports.getDate = getDate;
-
-function getDate() {
+exports.getDate = function() {
 
 let today = new Date();
 
@@ -11,13 +9,11 @@ let today = new Date();
         month: "long"
     }
 
-    return day = today.toLocaleDateString("en-GB", options);
+    return today.toLocaleDateString("en-GB", options);
     
 }
 
-module.exports.getDay = getDay;
-
-function getDay() {
+exports.getDay = function() {
 
     let today = new Date();
     
@@ -26,6 +22,6 @@ function getDay() {
             weekday: "long",
         }
     
-        return day = today.toLocaleDateString("en-GB", options);
+        return today.toLocaleDateString("en-GB", options);
         
     }
